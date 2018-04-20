@@ -162,7 +162,7 @@ def Exit() :
 
 def next():
     global count
-    f=open('open.txt','r')
+    f=open("abc.txt",'r')
     i=0
     while(i<=count):
         l=f.readline()
@@ -181,7 +181,7 @@ def next():
 def prev():
     global count
     if count!=1:
-        f=open('open.txt','r')
+        f=open("abc.txt",'r')
         i=0
         count = count - 1
         while(i<count):
