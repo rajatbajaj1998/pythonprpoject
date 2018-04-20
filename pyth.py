@@ -1,5 +1,5 @@
 from tkinter import *
-import tkinter
+from tkinter import messagebox
 
 m = Tk()
 m.title("Phone Database")
@@ -217,15 +217,15 @@ l5.grid(row=6,column=1)
 l6=Label(m,text="",bg="yellow")
 l6.grid(row=7,column=1)
 
-t1=Entry(m)
+t1=Entry(m,textvariable=a1)
 t1.grid(row=2,column=3)
-t2=Entry(m)
+t2=Entry(m,textvariable=a2)
 t2.grid(row=3,column=3)
-t3=Entry(m)
+t3=Entry(m,textvariable=a3)
 t3.grid(row=4,column=3)
-t4=Entry(m)
+t4=Entry(m,textvariable=a4)
 t4.grid(row=5,column=3)
-t5=Entry(m)
+t5=Entry(m,textvariable=a5)
 t5.grid(row=6,column=3)
 
 b1=Button(m,text="Save",fg="black",bg="red",width=20,command=add)
