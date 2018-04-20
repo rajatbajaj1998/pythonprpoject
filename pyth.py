@@ -123,44 +123,37 @@ def Del() :
 
 def firstrecord():
     f3=open("abc.txt",'r')
-    ctr=0
-    flag=0
-    for line in f3:
-        ctr=ctr+1
-        print(ctr)
-        f3.seek(0)
-        rl=f3.readlines()
-        l=list(rl)
-        print(l)
-        print("First record is:\n")
-        print(l[0])
+    line = f3.readline()
+    print(line)
+    lp=line.split()
+    a1.set(lp[0])
+    a2.set(lp[1])
+    a3.set(lp[2])
+    a4.set(lp[3])
+    a5.set(lp[4])
     f3.close()
-
 
 def lastrecord():
     f4=open("abc.txt","r")
     lp=f4.readlines()
-    try:
-        leng=lp[len(lp)-1]
-        print(leng)
-        l12=leng.split()
-        a1.set(l12[0])
-        a2.set(l12[1])
-        a3.set(l12[2])
-        a4.set(l12[3])
-        a5.set(l12[4])
-    except IndexError:
-        a6.set("No records")
+    leng=lp[len(lp)-1]
+    print(leng)
+    l12=leng.split()
+    a1.set(l12[0])
+    a2.set(l12[1])
+    a3.set(l12[2])
+    a4.set(l12[3])
+    a5.set(l12[4])
     f4.close()
+
 
 def Exit() :
         Exit = messagebox.askyesno("Quit System", "Do you want to quit?")
         if Exit > 0:
-            root.destroy()
+            m.destroy()
             return
 
-
-def next():
+def Next():
     global count
     f=open("abc.txt",'r')
     i=0
@@ -241,7 +234,7 @@ b5=Button(m,text="First record",fg="black",bg="red",width=20,command=firstrecord
 b5.grid(row=9,column=1)
 b6=Button(m,text="|<",fg="black",bg="red",width=20,command=prev)
 b6.grid(row=9,column=2)
-b7=Button(m,text=">|",fg="black",bg="red",width=20,command=next)
+b7=Button(m,text=">|",fg="black",bg="red",width=20,command=Next)
 b7.grid(row=9,column=3)
 b8=Button(m,text="Last Record",fg="black",bg="red",width=20,command=lastrecord)
 b8.grid(row=9,column=4)
